@@ -15,12 +15,22 @@ let text = `il prezzo del biglietto è di`
 
 let currency = `Euro`
 
-console.log(`${text} ${prezzoBigliettoStandard} ${currency}`);
-
 /*va applicato uno sconto del 20% per i minorenni
 va applicato uno sconto del 40% per gli over 65.
 L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo). Questo richiederà un minimo di ricerca.*/
 
-if (eta < 18){
+let finalPrice
 
+if (eta < 18){
+  finalPrice = (prezzoBigliettoStandard * 0.6).toFixed(2);
 }
+
+else if(eta >=65){
+  finalPrice = (prezzoBigliettoStandard * 0.8).toFixed(2);
+}
+
+else{
+  finalPrice = prezzoBigliettoStandard.toFixed(2);
+}
+
+console.log(`${text} ${finalPrice} ${currency}`)
