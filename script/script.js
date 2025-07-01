@@ -22,11 +22,11 @@ L'output del prezzo finale va messo fuori in forma umana (con massimo due decima
 let finalPrice
 
 if (eta < 18){
-  finalPrice = (prezzoBigliettoStandard * 0.6).toFixed(2);
+  finalPrice = (prezzoBigliettoStandard * 0.8).toFixed(2);
 }
 
 else if(eta >=65){
-  finalPrice = (prezzoBigliettoStandard * 0.8).toFixed(2);
+  finalPrice = (prezzoBigliettoStandard * 0.6).toFixed(2);
 }
 
 else{
