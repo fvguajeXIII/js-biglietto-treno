@@ -19,18 +19,11 @@ let currency = `Euro`
 va applicato uno sconto del 40% per gli over 65.
 L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo). Questo richiederà un minimo di ricerca.*/
 
-let finalPrice
+let finalPrice = prezzoBigliettoStandard
 
-if (eta < 18){
-  finalPrice = (prezzoBigliettoStandard * 0.8).toFixed(2);
+if (eta < 18) {
+  finalPrice = (prezzoBigliettoStandard * 0.8);
+} else if (eta >= 65) {
+  finalPrice = (prezzoBigliettoStandard * 0.6);
 }
-
-else if(eta >=65){
-  finalPrice = (prezzoBigliettoStandard * 0.6).toFixed(2);
-}
-
-else{
-  finalPrice = prezzoBigliettoStandard.toFixed(2);
-}
-
-console.log(`${text} ${finalPrice} ${currency}`)
+console.log(`${text} ${finalPrice.toFixed(2)} ${currency}`)
